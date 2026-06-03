@@ -1,1 +1,4 @@
 GENAI WEEKDAY BATCH RESOURCE
+
+
+Day 1 Setup 
