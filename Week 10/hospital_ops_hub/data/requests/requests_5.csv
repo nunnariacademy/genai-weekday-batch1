@@ -1,0 +1,6 @@
+request_id,timestamp,description,location,reported_by
+R01,2026-10-02T08:05,"New patient walked in: Neha Iyer, 26, itchy rash and mild facial swelling, needs a doctor",Reception,front_desk
+R02,2026-10-02T08:08,"Ambulance arrival: man around 60, severe chest pain and sweating, needs cardiologist and ER bed immediately",ER,ambulance_crew
+R03,2026-10-02T08:10,"Vomit spill in Ward B corridor, please send cleaning",Ward B,nurse_station
+R04,2026-10-02T08:12,"Young woman unconscious with seizures, needs neurologist now",ER,ER_nurse
+R05,2026-10-02T08:15,"Patient Anitha Selvam in bed B06 needs wheelchair transfer to X-ray",General Ward,nurse_station

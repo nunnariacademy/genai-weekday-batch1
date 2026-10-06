@@ -1,0 +1,9 @@
+bed_id,ward,status,patient_id
+B01,ER,occupied,P007
+B02,ER,free,
+B03,ICU,occupied,P001
+B04,ICU,occupied,P002
+B05,General,occupied,P003
+B06,General,occupied,P004
+B07,General,free,
+B08,General,free,

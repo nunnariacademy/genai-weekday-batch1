@@ -1,0 +1,11 @@
+shift_id,request_id,worker,event,detail,logged_at
+1,C001,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:49:05
+1,C001,Patient Agent,proposed,proposes patient [P007],2026-10-06T19:49:05
+1,C001,Doctor Agent,proposed,proposes doctor [D01],2026-10-06T19:49:05
+1,C001,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:49:05
+1,C001,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:49:05
+1,C001,Resource Arbiter,committed,patient P007 via Patient Agent,2026-10-06T19:49:05
+1,C001,Resource Arbiter,committed,bed B01 via Bed Agent,2026-10-06T19:49:05
+1,C001,Resource Arbiter,committed,doctor D01 via Doctor Agent,2026-10-06T19:49:05
+1,C001,Resource Arbiter,committed,staff PT01 via Staff Agent > ER Support Dispatch,2026-10-06T19:49:05
+1,-,Synthesizer,report,1 request(s) written to shift 1 log,2026-10-06T19:49:07

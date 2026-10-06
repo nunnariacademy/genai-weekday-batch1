@@ -1,0 +1,9 @@
+staff_id,name,role,capability,status,assigned_to
+S01,Priya Raman,clerk,registration,available,
+S02,Vignesh Kumar,clerk,registration,available,
+S03,Fathima Begum,ward_coordinator,coordination,available,
+PT01,Murugan S,porter,wheelchair|stretcher,available,
+PT02,Selvi A,porter,wheelchair|stretcher,busy,
+CL01,Housekeeping Team A,cleaning,standard,available,
+CL02,Housekeeping Team B,cleaning,standard|biohazard,available,
+FL01,Nisha George,float_pool,any,available,

@@ -1,0 +1,8 @@
+patient_id,name,age,condition,specialty_needed,status,priority,doctor_id,bed_id,discharge_ready
+P001,Suresh Babu,62,chest pain,cardiology,admitted,urgent,D01,B03,no
+P002,Lakshmi Devi,70,stroke recovery,neurology,admitted,routine,D02,B04,yes
+P003,Karthik Raj,34,migraine,neurology,admitted,routine,D02,B05,no
+P004,Anitha Selvam,45,leg fracture,orthopedics,admitted,routine,D04,B06,no
+P005,Mohammed Farook,29,fever,general_medicine,waiting,routine,,,no
+P006,Divya Prakash,51,abdominal pain,general_medicine,waiting,routine,,,no
+P007,Unknown (C001),60,severe chest pain,cardiology,admitted,emergency,D01,B01,no

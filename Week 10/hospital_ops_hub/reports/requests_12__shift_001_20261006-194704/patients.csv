@@ -1,0 +1,12 @@
+patient_id,name,age,condition,specialty_needed,status,priority,doctor_id,bed_id,discharge_ready
+P001,Suresh Babu,62,chest pain,cardiology,admitted,urgent,D01,B03,no
+P002,Lakshmi Devi,70,stroke recovery,neurology,discharged,routine,D02,,no
+P003,Karthik Raj,34,migraine,neurology,admitted,routine,D02,B05,no
+P004,Anitha Selvam,45,leg fracture,orthopedics,admitted,routine,D04,B06,no
+P005,Mohammed Farook,29,fever,general_medicine,admitted,routine,,B07,no
+P006,Divya Prakash,51,abdominal pain,general_medicine,admitted,routine,,B08,no
+P008,Unknown (R02),60,severe chest pain,cardiology,admitted,emergency,D01,B01,no
+P009,Unknown (R04),,unconscious with seizures,neurology,admitted,emergency,D02,B02,no
+P010,Rahul Dev,55,post-op,general_medicine,admitted,urgent,,B04,no
+P007,Neha Iyer,26,itchy rash and mild facial swelling,general_medicine,waiting,routine,D03,,no
+P011,Gopal Krishnan,67,knee pain after a fall,orthopedics,waiting,routine,,,no

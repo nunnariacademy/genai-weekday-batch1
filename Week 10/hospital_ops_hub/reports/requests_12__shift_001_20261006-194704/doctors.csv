@@ -1,0 +1,5 @@
+doctor_id,name,specialty,status,current_patient_count,shift_end,current_patient_ids
+D01,Dr. Meera Nair,cardiology,busy,2,2026-10-02T20:00,P001|P008
+D02,Dr. Arjun Menon,neurology,busy,2,2026-10-02T20:00,P003|P009
+D03,Dr. Kavitha Rao,general_medicine,available,1,2026-10-02T08:40,P007
+D04,Dr. Imran Sheikh,orthopedics,busy,1,2026-10-02T20:00,P004

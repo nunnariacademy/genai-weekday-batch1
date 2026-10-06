@@ -1,0 +1,58 @@
+shift_id,request_id,worker,event,detail,logged_at
+1,X01,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:47:06
+1,X02,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:47:06
+1,X03,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:47:06
+1,X04,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:47:06
+1,X01,Patient Agent,proposed,proposes patient [P007],2026-10-06T19:47:06
+1,X01,Doctor Agent,proposed,proposes doctor [D01],2026-10-06T19:47:06
+1,X01,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:47:06
+1,X01,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:47:06
+1,X02,Patient Agent,proposed,proposes patient [P008],2026-10-06T19:47:06
+1,X02,Doctor Agent,proposed,proposes doctor [D01],2026-10-06T19:47:06
+1,X02,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:47:06
+1,X02,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:47:06
+1,X03,Patient Agent,proposed,proposes patient [P009],2026-10-06T19:47:06
+1,X03,Doctor Agent,proposed,no doctor available (no free neurology doctor (D02 is busy)) -> on_fail=reallocation,2026-10-06T19:47:06
+1,X03,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:47:06
+1,X03,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:47:06
+1,X04,Patient Agent,proposed,proposes patient [P010],2026-10-06T19:47:06
+1,X04,Doctor Agent,proposed,no doctor available (no free neurology doctor (D02 is busy)) -> on_fail=reallocation,2026-10-06T19:47:06
+1,X04,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:47:06
+1,X04,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:47:06
+1,X01,Resource Arbiter,conflict,"bed B01 claimed by X01, X02, X03, X04; X01 wins (emergency, 2026-10-02T09:00); X02, X03, X04 try next option",2026-10-06T19:47:06
+1,X01,Resource Arbiter,conflict,"doctor D01 claimed by X01, X02; X01 wins (emergency, 2026-10-02T09:00); X02 try next option",2026-10-06T19:47:06
+1,X01,Resource Arbiter,conflict,"staff PT01 claimed by X01, X02, X03, X04; X01 wins (emergency, 2026-10-02T09:00); X02, X03, X04 try next option",2026-10-06T19:47:06
+1,X01,Resource Arbiter,committed,patient P007 via Patient Agent,2026-10-06T19:47:06
+1,X01,Resource Arbiter,committed,bed B01 via Bed Agent,2026-10-06T19:47:06
+1,X01,Resource Arbiter,committed,doctor D01 via Doctor Agent,2026-10-06T19:47:06
+1,X01,Resource Arbiter,committed,staff PT01 via Staff Agent > ER Support Dispatch,2026-10-06T19:47:06
+1,X02,Resource Arbiter,committed,patient P008 via Patient Agent,2026-10-06T19:47:06
+1,X02,Resource Arbiter,committed,bed B02 via Bed Agent,2026-10-06T19:47:06
+1,X02,Resource Arbiter,unassigned,doctor: every eligible cardiology doctor was taken [D01 already granted to a higher-priority request] -> reallocation,2026-10-06T19:47:06
+1,X02,Resource Arbiter,unassigned,staff: no available porter/nurse with stretcher [PT01 already granted to a higher-priority request] -> staffing_gap,2026-10-06T19:47:06
+1,X03,Resource Arbiter,committed,patient P009 via Patient Agent,2026-10-06T19:47:06
+1,X03,Resource Arbiter,unassigned,"bed: ER ward full, no discharge-ready bed [B01 already granted to a higher-priority request; B02 already granted to a higher-priority request] -> escalate",2026-10-06T19:47:06
+1,X03,Resource Arbiter,unassigned,doctor: no free neurology doctor (D02 is busy) -> reallocation,2026-10-06T19:47:06
+1,X03,Resource Arbiter,unassigned,staff: no available porter/nurse with stretcher [PT01 already granted to a higher-priority request] -> staffing_gap,2026-10-06T19:47:06
+1,X04,Resource Arbiter,committed,patient P010 via Patient Agent,2026-10-06T19:47:06
+1,X04,Resource Arbiter,unassigned,"bed: ER ward full, no discharge-ready bed [B01 already granted to a higher-priority request; B02 already granted to a higher-priority request] -> escalate",2026-10-06T19:47:06
+1,X04,Resource Arbiter,unassigned,doctor: no free neurology doctor (D02 is busy) -> reallocation,2026-10-06T19:47:06
+1,X04,Resource Arbiter,unassigned,staff: no available porter/nurse with stretcher [PT01 already granted to a higher-priority request] -> staffing_gap,2026-10-06T19:47:06
+1,X02,Reallocation Worker,proposed,no doctor available (no doctor could be reallocated) -> on_fail=escalate,2026-10-06T19:47:06
+1,X02,Staffing Gap Resolver,proposed,proposes staff [FL01],2026-10-06T19:47:06
+1,X03,Reallocation Worker,proposed,proposes doctor [D02],2026-10-06T19:47:06
+1,X03,Staffing Gap Resolver,proposed,proposes staff [FL01],2026-10-06T19:47:06
+1,X04,Reallocation Worker,proposed,proposes doctor [D02],2026-10-06T19:47:06
+1,X04,Staffing Gap Resolver,proposed,proposes staff [FL01],2026-10-06T19:47:06
+1,X02,Resource Arbiter,conflict,"staff FL01 claimed by X02, X03, X04; X02 wins (emergency, 2026-10-02T09:01); X03, X04 try next option",2026-10-06T19:47:06
+1,X03,Resource Arbiter,conflict,"doctor D02 claimed by X03, X04; X03 wins (emergency, 2026-10-02T09:02); X04 try next option",2026-10-06T19:47:06
+1,X02,Resource Arbiter,unassigned,doctor: no doctor could be reallocated -> escalate,2026-10-06T19:47:06
+1,X02,Resource Arbiter,committed,staff FL01 via Staffing Gap Resolver,2026-10-06T19:47:06
+1,X03,Resource Arbiter,committed,doctor D02 via Reallocation Worker,2026-10-06T19:47:06
+1,X03,Resource Arbiter,unassigned,staff: float pool and on-call exhausted for stretcher [FL01 already granted to a higher-priority request] -> escalate,2026-10-06T19:47:06
+1,X04,Resource Arbiter,unassigned,doctor: no doctor could be reallocated [D02 already granted to a higher-priority request] -> escalate,2026-10-06T19:47:06
+1,X04,Resource Arbiter,unassigned,staff: float pool and on-call exhausted for stretcher [FL01 already granted to a higher-priority request] -> escalate,2026-10-06T19:47:06
+1,X02,Escalation Agent,escalated,flagged for human supervisor: Page on-call specialist or arrange transfer to a partner hospital,2026-10-06T19:47:06
+1,X03,Escalation Agent,escalated,flagged for human supervisor: Expedite discharges or divert the ambulance / arrange inter-hospital transfer,2026-10-06T19:47:06
+1,X04,Escalation Agent,escalated,flagged for human supervisor: Page on-call specialist or arrange transfer to a partner hospital,2026-10-06T19:47:06
+1,-,Synthesizer,report,4 request(s) written to shift 1 log,2026-10-06T19:47:08

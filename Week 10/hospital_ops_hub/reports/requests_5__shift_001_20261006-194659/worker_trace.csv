@@ -1,0 +1,44 @@
+shift_id,request_id,worker,event,detail,logged_at
+1,R02,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:46:57
+1,R04,Orchestrator,triaged,"er_emergency / emergency via llm -> Send: Patient Agent(register), Doctor Agent(assign_er), Bed Agent(assign_er), Staff Agent(er_support)",2026-10-06T19:46:57
+1,R01,Orchestrator,triaged,"new_patient / routine via llm -> Send: Patient Agent(register), Doctor Agent(assign), Staff Agent(clerk)",2026-10-06T19:46:57
+1,R03,Orchestrator,triaged,cleaning / routine via llm -> Send: Staff Agent(housekeeping),2026-10-06T19:46:57
+1,R05,Orchestrator,triaged,"patient_handling / routine via llm -> Send: Patient Agent(register), Staff Agent(handling)",2026-10-06T19:46:57
+1,R02,Patient Agent,proposed,proposes patient [P008],2026-10-06T19:46:57
+1,R02,Doctor Agent,proposed,proposes doctor [D01],2026-10-06T19:46:57
+1,R02,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:46:57
+1,R02,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:46:57
+1,R04,Patient Agent,proposed,proposes patient [P009],2026-10-06T19:46:57
+1,R04,Doctor Agent,proposed,no doctor available (no free neurology doctor (D02 is busy)) -> on_fail=reallocation,2026-10-06T19:46:57
+1,R04,Bed Agent,proposed,"proposes bed [B01, B02]",2026-10-06T19:46:57
+1,R04,Staff Agent > ER Support Dispatch,proposed,proposes staff [PT01],2026-10-06T19:46:57
+1,R01,Patient Agent,proposed,proposes patient [P007],2026-10-06T19:46:57
+1,R01,Doctor Agent,proposed,proposes doctor [D03],2026-10-06T19:46:57
+1,R01,Staff Agent > Clerk Dispatch,proposed,"proposes staff [S01, S02]",2026-10-06T19:46:57
+1,R03,Staff Agent > Housekeeping Dispatcher,proposed,"proposes staff [CL01, CL02]",2026-10-06T19:46:57
+1,R05,Patient Agent,proposed,proposes patient [P004],2026-10-06T19:46:57
+1,R05,Staff Agent > Handling Dispatcher,proposed,proposes staff [PT01],2026-10-06T19:46:57
+1,R02,Resource Arbiter,conflict,"bed B01 claimed by R02, R04; R02 wins (emergency, 2026-10-02T08:08); R04 try next option",2026-10-06T19:46:57
+1,R02,Resource Arbiter,conflict,"staff PT01 claimed by R02, R04, R05; R02 wins (emergency, 2026-10-02T08:08); R04, R05 try next option",2026-10-06T19:46:57
+1,R02,Resource Arbiter,committed,patient P008 via Patient Agent,2026-10-06T19:46:57
+1,R02,Resource Arbiter,committed,bed B01 via Bed Agent,2026-10-06T19:46:57
+1,R02,Resource Arbiter,committed,doctor D01 via Doctor Agent,2026-10-06T19:46:57
+1,R02,Resource Arbiter,committed,staff PT01 via Staff Agent > ER Support Dispatch,2026-10-06T19:46:57
+1,R04,Resource Arbiter,committed,patient P009 via Patient Agent,2026-10-06T19:46:57
+1,R04,Resource Arbiter,committed,bed B02 via Bed Agent,2026-10-06T19:46:57
+1,R04,Resource Arbiter,unassigned,doctor: no free neurology doctor (D02 is busy) -> reallocation,2026-10-06T19:46:57
+1,R04,Resource Arbiter,unassigned,staff: no available porter/nurse with stretcher [PT01 already granted to a higher-priority request] -> staffing_gap,2026-10-06T19:46:57
+1,R01,Resource Arbiter,committed,patient P007 via Patient Agent,2026-10-06T19:46:57
+1,R01,Resource Arbiter,committed,doctor D03 via Doctor Agent,2026-10-06T19:46:57
+1,R01,Resource Arbiter,committed,staff S01 via Staff Agent > Clerk Dispatch,2026-10-06T19:46:57
+1,R03,Resource Arbiter,committed,staff CL01 via Staff Agent > Housekeeping Dispatcher,2026-10-06T19:46:57
+1,R05,Resource Arbiter,committed,patient P004 via Patient Agent,2026-10-06T19:46:57
+1,R05,Resource Arbiter,unassigned,staff: no available porter/nurse with wheelchair [PT01 already granted to a higher-priority request] -> staffing_gap,2026-10-06T19:46:57
+1,R04,Reallocation Worker,proposed,"proposes doctor [D02, D03]",2026-10-06T19:46:57
+1,R04,Staffing Gap Resolver,proposed,proposes staff [FL01],2026-10-06T19:46:57
+1,R05,Staffing Gap Resolver,proposed,proposes staff [FL01],2026-10-06T19:46:57
+1,R04,Resource Arbiter,conflict,"staff FL01 claimed by R04, R05; R04 wins (emergency, 2026-10-02T08:12); R05 try next option",2026-10-06T19:46:57
+1,R04,Resource Arbiter,committed,doctor D02 via Reallocation Worker,2026-10-06T19:46:57
+1,R04,Resource Arbiter,committed,staff FL01 via Staffing Gap Resolver,2026-10-06T19:46:57
+1,R05,Resource Arbiter,unassigned,staff: float pool and on-call exhausted for wheelchair [FL01 already granted to a higher-priority request] -> queue,2026-10-06T19:46:57
+1,-,Synthesizer,report,5 request(s) written to shift 1 log,2026-10-06T19:46:59
