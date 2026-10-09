@@ -1,0 +1,21 @@
+name: ticket-agent-neo4j
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: ticket-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/ticket_pass123
+    ports:
+      - "7475:7474"   # Neo4j Browser  -> http://localhost:7475
+      - "7688:7687"   # Bolt           -> bolt://localhost:7688 (avoids clashing with a local Neo4j)
+    volumes:
+      - ticket_neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p ticket_pass123 'RETURN 1' || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  ticket_neo4j_data:
